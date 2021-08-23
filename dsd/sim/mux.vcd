@@ -1,0 +1,62 @@
+$date
+	Fri Aug 20 16:19:22 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux_tb $end
+$var wire 8 ! S [7:0] $end
+$var reg 8 " A [7:0] $end
+$var reg 8 # B [7:0] $end
+$var reg 8 $ C [7:0] $end
+$var reg 8 % D [7:0] $end
+$var reg 2 & sel [1:0] $end
+$scope module UUT $end
+$var wire 8 ' A [7:0] $end
+$var wire 8 ( B [7:0] $end
+$var wire 8 ) C [7:0] $end
+$var wire 8 * D [7:0] $end
+$var wire 2 + sel [1:0] $end
+$var reg 8 , S [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11111111 ,
+bx +
+b100010 *
+b10101010 )
+b1010101 (
+b11111111 '
+bx &
+b100010 %
+b10101010 $
+b1010101 #
+b11111111 "
+b11111111 !
+$end
+#10
+b100010 !
+b100010 ,
+b11 &
+b11 +
+#20
+b10101010 !
+b10101010 ,
+b10 &
+b10 +
+#30
+b1010101 !
+b1010101 ,
+b1 &
+b1 +
+#40
+b11111111 !
+b11111111 ,
+b0 &
+b0 +
+#50

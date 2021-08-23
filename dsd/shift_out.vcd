@@ -1,0 +1,162 @@
+$date
+	Fri Aug 20 15:16:25 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module shift_tb $end
+$var wire 1 ! cout $end
+$var reg 8 " LD [7:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ dir $end
+$var reg 1 % load $end
+$var reg 1 & rstn $end
+$scope module UUT $end
+$var wire 8 ' LD [7:0] $end
+$var wire 1 # clk $end
+$var wire 1 $ dir $end
+$var wire 1 % load $end
+$var wire 1 & rstn $end
+$var wire 1 ! cout $end
+$var reg 8 ( mem [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 (
+b0 '
+0&
+0%
+0$
+0#
+b0 "
+0!
+$end
+#5
+1#
+#10
+0#
+b1010101 "
+b1010101 '
+1&
+#15
+b0 (
+1#
+1%
+#20
+0#
+#25
+b0 (
+1#
+#30
+0#
+#35
+b0 (
+1#
+#40
+0#
+#45
+b0 (
+1#
+#50
+0#
+#55
+b0 (
+1#
+#60
+0#
+#65
+b0 (
+1#
+#70
+0#
+#75
+b0 (
+1#
+#80
+0#
+#85
+b0 (
+1#
+#90
+0#
+#95
+b0 (
+1#
+#100
+0#
+#105
+b0 (
+1#
+#110
+0#
+#115
+b0 (
+1#
+1$
+b10101010 "
+b10101010 '
+#120
+0#
+#125
+b0 (
+1#
+#130
+0#
+#135
+b0 (
+1#
+#140
+0#
+#145
+b0 (
+1#
+#150
+0#
+#155
+b0 (
+1#
+#160
+0#
+#165
+b0 (
+1#
+#170
+0#
+#175
+b0 (
+1#
+#180
+0#
+#185
+b0 (
+1#
+#190
+0#
+#195
+b0 (
+1#
+#200
+0#
+#205
+b0 (
+1#
+#210
+0#
+#215
+1#
+0&
+b11111111 "
+b11111111 '
+#220
+0#
+#225
+1#
+#230
+0#
+#235
+1#

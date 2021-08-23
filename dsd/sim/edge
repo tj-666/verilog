@@ -1,0 +1,98 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55e392505cf0 .scope module, "test_edge" "test_edge" 2 1;
+ .timescale 0 0;
+v0x55e392518890_0 .var "cin", 0 0;
+v0x55e392518950_0 .var "clk", 0 0;
+v0x55e392518a20_0 .net "cout", 0 0, v0x55e392518650_0;  1 drivers
+v0x55e392518b20_0 .var "rstn", 0 0;
+S_0x55e392505e80 .scope module, "uut" "edge_detect" 2 8, 3 1 0, S_0x55e392505cf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rstn";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "cout";
+v0x55e3924cf190_0 .net "cin", 0 0, v0x55e392518890_0;  1 drivers
+v0x55e3924cef30_0 .net "clk", 0 0, v0x55e392518950_0;  1 drivers
+v0x55e392518650_0 .var "cout", 0 0;
+v0x55e392518720_0 .net "rstn", 0 0, v0x55e392518b20_0;  1 drivers
+E_0x55e3924cde00 .event posedge, v0x55e392518720_0, v0x55e3924cef30_0;
+    .scope S_0x55e392505e80;
+T_0 ;
+    %wait E_0x55e3924cde00;
+    %load/vec4 v0x55e392518720_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55e392518650_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x55e3924cf190_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_0.2, 8;
+    %pushi/vec4 1, 0, 2;
+    %jmp/1 T_0.3, 8;
+T_0.2 ; End of true expr.
+    %pushi/vec4 0, 0, 2;
+    %jmp/0 T_0.3, 8;
+ ; End of false expr.
+    %blend;
+T_0.3;
+    %pad/s 1;
+    %store/vec4 v0x55e392518650_0, 0, 1;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x55e392505cf0;
+T_1 ;
+    %vpi_call 2 14 "$dumpfile", "edge.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55e392505cf0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e392518b20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e392518890_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e392518950_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e392518b20_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e392518890_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e392518890_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55e392518890_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e392518b20_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x55e392505cf0;
+T_2 ;
+T_2.0 ;
+    %delay 5, 0;
+    %load/vec4 v0x55e392518950_0;
+    %inv;
+    %store/vec4 v0x55e392518950_0, 0, 1;
+    %jmp T_2.0;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_edge.v";
+    "edge_detect.v";
